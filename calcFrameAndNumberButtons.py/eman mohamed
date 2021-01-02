@@ -1,0 +1,83 @@
+from tkinter import *
+import math
+import parser
+import tkinter.messagebox
+
+#eman task
+
+root = Tk()  #عشان يظخر الويندو
+root.title("Calculator")
+root.configure(background = "AliceBlue") #لون الويندو
+root.resizable(width=FALSE, height= FALSE)  #عشان اقدر اعملها ريسايز
+root.geometry("480x568+0+0") #بحدد عاوزه الحجم كام في كام 
+
+#عشان اعمل منيو بار فوق 
+calc = Frame(root)
+calc.grid()
+
+
+
+
+
+                #numbers buttons
+textDisplay = Entry(calc, font =('arial', 20, 'bold'), bg = '#212F3D', bd=30, width =29, fg = 'black', justify = RIGHT) 
+textDisplay.grid(row=0, column=0, columnspan=4,pady=1)
+textDisplay.insert(0, "Enter operation")
+textDisplay.focus_set()
+#for buttons
+numberBads = "789456123"
+i=0
+btn= []
+for j in range(2,5):
+    for k in range(3):
+        btn.append(Button(calc, width=6, height=2,bg='#34495E',fg='white', font=('Helvetica',20,'bold'),bd=4, text = numberBads[i ]))
+        btn[i].grid(row= j, column = k, pady = 1)
+        btn[i]["command"]=lambda x=numberBads[i]:added_value.numberEnter(x)
+        i+= 1
+
+
+
+def iExit ():  #function to exit
+    iExit = tkinter.messagebox.askyesno("Secintific Calculator", "confirm if you want to exit!")
+    if iExit > 0 :
+        root.destroy()
+        return
+
+def Secientific():
+    root.resizable(width=FALSE, height= FALSE)
+    root.geometry("958x578+1+1")
+
+def Simple():
+    root.resizable(width=FALSE, height= FALSE)
+    root.geometry("490x578+1+1")
+
+
+menubar = Menu(calc) # ده عشان اجهز ايقون المنيو
+# menubar.configure(background = "red")
+
+filemenu = Menu(menubar, tearoff = 0) #عشان اعمل الدروب ليست في كل ايقون
+menubar.add_cascade(label ="File", menu=filemenu) # ايقون رقم واحد واسمها فايل
+filemenu.add_command(label=" simple calc", command = Simple)  #دي الدروب ليست ايكون 
+filemenu.add_separator()
+filemenu.add_command(label=" Secientifc calc", command = Secientific)
+filemenu.add_separator()
+filemenu.add_command(label= "Exit", command = iExit)
+
+filemenu2 =  Menu(menubar, tearoff=0)
+menubar.add_cascade(label = "Edit", menu= filemenu2)
+filemenu2.add_command(label="Copy")
+filemenu2.add_separator()
+filemenu2.add_command(label="Cut") 
+filemenu2.add_separator()
+filemenu2.add_command(label= "paste")
+
+filemenu3 = Menu(menubar, tearoff=0)
+menubar.add_cascade(label="Help", menu=filemenu3)
+filemenu3.add_command(label = "view help")
+
+root.config(menu=menubar)
+root.mainloop()
+
+
+
+
