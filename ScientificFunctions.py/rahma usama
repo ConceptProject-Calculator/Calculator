@@ -1,0 +1,84 @@
+def squared(self):
+        self.result = False
+        self.current = math.sqrt(float(textDisplay.get()))
+        self.display(self.current)
+
+    def cos(self):
+        self.result = False
+        self.current = math.cos(math.radians(float(textDisplay.get())))
+        self.display(self.current)
+
+    def cosh(self):
+        self.result = False
+        self.current = math.cosh(math.radians(float(textDisplay.get())))
+        self.display(self.current)
+
+    def tan(self):
+        self.result = False
+        self.current = math.tan(math.radians(float(textDisplay.get())))
+        self.display(self.current)
+
+    def tanh(self):
+        self.result = False
+        self.current = math.tanh(math.radians(float(textDisplay.get())))
+        self.display(self.current)
+
+    def sin(self):
+        self.result = False
+        self.current = math.sin(math.radians(float(textDisplay.get())))
+        self.display(self.current)
+
+    def sinh(self):
+        self.result = False
+        self.current = math.sinh(math.radians(float(textDisplay.get())))
+        self.display(self.current)
+
+    def log(self):
+        self.result = False
+        self.current = math.log(float(textDisplay.get()))
+        self.display(self.current)
+
+    def exp(self):
+        self.result = False
+        self.current = math.exp(float(textDisplay.get()))
+        self.display(self.current)
+
+    def acosh(self):
+        self.result = False
+        self.current = math.acosh(float(textDisplay.get()))
+        self.display(self.current)
+
+    def asinh(self):
+        self.result = False
+        self.current = math.asinh(float(textDisplay.get()))
+        self.display(self.current)
+
+    def expm1(self):
+        self.result = False
+        self.current = math.expm1(float(textDisplay.get()))
+        self.display(self.current)
+
+    def lgamma(self):
+        self.result = False
+        self.current = math.lgamma(float(textDisplay.get()))
+        self.display(self.current)
+
+    def degrees(self):
+        self.result = False
+        self.current = math.degrees(float(textDisplay.get()))
+        self.display(self.current)
+
+    def log2(self):
+        self.result = False
+        self.current = math.log2(float(textDisplay.get()))
+        self.display(self.current)
+
+    def log10(self):
+        self.result = False
+        self.current = math.log10(float(textDisplay.get()))
+        self.display(self.current)
+
+    def pow(self):
+        self.result = False
+        self.current = math.pow(float(textDisplay.get()),2)
+        self.display(self.current)
